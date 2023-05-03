@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "510257805787",
+    "firebase_url": "https://scorpion-32f41.firebaseio.com",
+    "project_id": "scorpion-32f41",
+    "storage_bucket": "scorpion-32f41.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510257805787:android:cdfdd7938a9282da6f4ffe",
+        "android_client_info": {
+          "package_name": "com.scorpion.splashwalls"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "510257805787-qk4ehas7nkt1qq1ft1po822on8cu2k6p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGq8vfbgJoGfcEBN9fyKf2g5O5jscY3FE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "510257805787-qk4ehas7nkt1qq1ft1po822on8cu2k6p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

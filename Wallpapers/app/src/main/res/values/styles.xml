@@ -1,0 +1,117 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <style name="Base.V7.DarkTheme" parent="Theme.AppCompat.NoActionBar" />
+    <style name="Base.DarkTheme" parent="Base.V7.DarkTheme" />
+    <style name="DarkTheme" parent="Base.DarkTheme">
+
+        <item name="colorPrimary">@color/dark_youtube_primary_color</item>
+        <item name="colorPrimaryDark">@color/dark_youtube_dark_color</item>
+        <item name="colorAccent">@color/dark_youtube_accent_color</item>
+        <item name="android:windowBackground">@color/black</item>
+        <item name="windowBackground">@color/black</item>
+
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+<!--    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+<!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+<!--        <item name="colorPrimary">@color/dark_youtube_primary_color</item>-->
+<!--        <item name="colorPrimaryDark">@color/dark_youtube_dark_color</item>-->
+<!--        <item name="colorAccent">@color/dark_youtube_accent_color</item>-->
+<!--        <item name="android:windowBackground">@color/black_background_color</item>-->
+<!--        <item name="windowBackground">@color/black_background_color</item>-->
+
+<!--        <item name="separator_color">@color/black_separator_color</item>-->
+<!--        <item name="contrast_background_color">@color/black_contrast_background_color</item>-->
+
+<!--        <item name="android:windowNoTitle">true</item>-->
+<!--        <item name="android:windowActionBar">false</item>-->
+<!--        <item name="android:windowFullscreen">true</item>-->
+<!--        <item name="android:windowContentOverlay">@null</item>-->
+<!--        <item name="android:navigationBarColor">@color/black</item>-->
+<!--        <item name="android:textColor">@color/white</item>-->
+
+<!--    </style>-->
+
+
+    <style name="SearchTextStyle">
+        <!-- Custom values write to here for SearchEditText. -->
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:enabled">true</item>
+        <item name="android:hint">Search</item>
+        <item name="android:imeOptions">actionSearch</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:maxLength">15</item>
+        <item name="android:inputType">textCapSentences</item>
+        <item name="android:textColorHint">#80BCBBBB</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="full_screen_dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="MineCustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">30dp</item>
+    </style>
+
+    <style name="RelatedDialog" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="android:windowAnimationStyle">@style/RelatedDialogAnimation</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="actionMenuTextColor">@color/colorAccent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="RelatedDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/bottom_up</item>
+        <item name="android:windowExitAnimation">@anim/bottom_down</item>
+    </style>
+
+    <style name="CustomShowcaseTheme" parent="ShowcaseView.Light">
+        <item name="sv_backgroundColor">#DD424342</item>
+        <item name="sv_showcaseColor">#424342</item>
+        <item name="sv_buttonText">Hide</item>
+        <item name="sv_tintButtonColor">false</item>
+        <item name="sv_titleTextAppearance">@style/CustomTitle</item>
+        <item name="sv_detailTextAppearance">@style/CustomText</item>
+    </style>
+
+    <style name="CustomTitle" parent="TextAppearance.ShowcaseView.Title">
+        <!--<item name="android:textColor">#C1B098</item>-->
+        <item name="android:textColor">#FFA036</item>
+    </style>
+
+    <style name="CustomText" parent="TextAppearance.ShowcaseView.Detail.Light">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+</resources>

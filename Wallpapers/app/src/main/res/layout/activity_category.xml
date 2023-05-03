@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/black"
+    android:layout_height="match_parent">
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    android:layout_marginBottom="55dp"
+    tools:context=".activities.MyFavImagesActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:weightSum="10"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:layout_scrollFlags="scroll|snap">
+
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="75dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerInParent="true"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="3dp">
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="73dp"
+                    android:layout_height="73dp"
+                    android:layout_centerInParent="true"
+                    android:backgroundTint="#000000"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="3dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:adjustViewBounds="true"
+                        android:background="#000"
+                        android:src="@drawable/category_main2" />
+
+                </androidx.cardview.widget.CardView>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_medium"
+                android:gravity="center"
+                android:text="Categories"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/noCollections"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="empty.json"
+                app:lottie_loop="true" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/main_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lav_actionBar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                app:lottie_autoPlay="true"
+                android:visibility="gone"
+                app:lottie_fileName="loading.json"
+                app:lottie_loop="true" />
+
+            <ProgressBar
+                android:id="@+id/main_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/filterSearchBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="#000"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="5dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#000"/>
+
+                    <ImageView
+                        android:id="@+id/filterSearch"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="#000"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_filter_list_white_24dp" />
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/categoryBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="#000"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="5dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#000"/>
+
+                    <ImageView
+                        android:id="@+id/categorySearch"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="#000"
+                        android:layout_gravity="center"
+                        android:src="@drawable/category_press" />
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+<LinearLayout
+android:id="@+id/banner_container"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_alignParentBottom="true"
+android:orientation="vertical"
+app:layout_constraintBottom_toBottomOf="parent" />
+
+
+<com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+android:id="@+id/adView"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentBottom="true"
+android:layout_centerHorizontal="true"
+ads:adSize="BANNER"
+ads:adUnitId="@string/banner_id"/>
+
+
+    </RelativeLayout>

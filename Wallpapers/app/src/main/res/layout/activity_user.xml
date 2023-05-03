@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/black"
+    android:layout_height="match_parent">
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:layout_marginBottom="55dp"
+    tools:context=".activities.UserActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_scrollFlags="scroll|snap">
+
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="75dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerInParent="true"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="3dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/profile"
+                        android:adjustViewBounds="true"
+                        android:background="#000" />
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/gilroy_medium"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/gilroy_medium"
+                android:gravity="center"
+                android:textColor="@color/offwhite"
+                android:textSize="15dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/followers"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:gravity="center"
+                    android:textColor="@color/offwhite"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/followings"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:gravity="center"
+                    android:textColor="@color/offwhite"
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/bio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/gilroy_medium"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/user_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabGravity="fill"
+            app:tabTextColor="@color/white"
+            app:tabIndicatorColor="@color/selected_color"
+            app:tabMode="fixed" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/user_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#9F000000"
+        android:gravity="center">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="loading.json"
+            app:lottie_loop="true" />
+
+    </LinearLayout>
+
+
+    <!--    <androidx.core.widget.NestedScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:orientation="vertical"-->
+    <!--            android:layout_height="match_parent">-->
+
+    <!--            -->
+
+    <!--        </LinearLayout>-->
+
+    <!--    </androidx.core.widget.NestedScrollView>-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+<LinearLayout
+android:id="@+id/banner_container"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_alignParentBottom="true"
+android:orientation="vertical"
+app:layout_constraintBottom_toBottomOf="parent" />
+
+
+<com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+android:id="@+id/adView"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentBottom="true"
+android:layout_centerHorizontal="true"
+ads:adSize="BANNER"
+ads:adUnitId="@string/banner_id"/>
+
+
+    </RelativeLayout>

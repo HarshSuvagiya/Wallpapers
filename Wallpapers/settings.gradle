@@ -1,0 +1,4 @@
+rootProject.name='Wallpapers'
+include ':app' ,':multisearchviewlib'
+include ':consentsdk'
+include '::consent-library'

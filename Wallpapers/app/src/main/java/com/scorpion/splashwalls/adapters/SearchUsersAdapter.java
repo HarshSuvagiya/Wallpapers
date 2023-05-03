@@ -1,0 +1,284 @@
+package com.scorpion.splashwalls.adapters;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.util.DisplayMetrics;
+import android.view.Display;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.ayoubfletcher.consentsdk.ConsentSDK;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.scorpion.splashwalls.R;
+import com.scorpion.splashwalls.activities.ImageDetailActivity;
+import com.scorpion.splashwalls.activities.UserActivity;
+import com.scorpion.splashwalls.models.SearchUserModel;
+import com.scorpion.splashwalls.helpers.AdHelper;
+import com.scorpion.splashwalls.utils.Utils;
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+
+public class SearchUsersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+    private static final int ITEM = 0;
+    private static final int LOADING = 1;
+
+    private List<SearchUserModel.Results> movieResults;
+    private Context context;
+
+    private boolean isLoadingAdded = false;
+
+    public SearchUsersAdapter(Context context) {
+        this.context = context;
+        movieResults = new ArrayList<>();
+        AdHelper.LoadInter(context);
+    }
+
+    public List<SearchUserModel.Results> getMovies() {
+        return movieResults;
+    }
+
+    public void setMovies(List<SearchUserModel.Results> movieResults) {
+        this.movieResults = movieResults;
+    }
+
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        RecyclerView.ViewHolder viewHolder = null;
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+
+        switch (viewType) {
+            case ITEM:
+                viewHolder = getViewHolder(parent, inflater);
+                break;
+            case LOADING:
+                View v2 = inflater.inflate(R.layout.item_progress, parent, false);
+                viewHolder = new SearchUsersAdapter.LoadingVH(v2);
+                break;
+        }
+        return viewHolder;
+    }
+
+    @NonNull
+    private RecyclerView.ViewHolder getViewHolder(ViewGroup parent, LayoutInflater inflater) {
+        RecyclerView.ViewHolder viewHolder;
+        View v1 = inflater.inflate(R.layout.search_user_adapter_layout, parent, false);
+        viewHolder = new SearchUsersAdapter.MovieVH(v1);
+        return viewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+
+        final SearchUserModel.Results result = movieResults.get(position); // Movie
+//        Log.e("movieResultsSize", String.valueOf(result.getUrls().getFull()));
+        switch (getItemViewType(position)) {
+            case ITEM:
+                final SearchUsersAdapter.MovieVH movieVH = (SearchUsersAdapter.MovieVH) holder;
+//                String link = result.getPreview_photos()[0].getUrls().getSmall();
+//                link = link.replace("w=400","w=600");
+                try {
+                    if (result.getPhotos().length == 0) {
+                        movieVH.card1.setVisibility(View.GONE);
+                        movieVH.card2.setVisibility(View.GONE);
+                        movieVH.card3.setVisibility(View.GONE);
+                        Picasso.get().load(R.drawable.ic_file_upload_black_24dp).into(movieVH.image11);
+                    } else if (result.getPhotos().length == 1) {
+                        movieVH.card1.setVisibility(View.VISIBLE);
+                        movieVH.card2.setVisibility(View.GONE);
+                        movieVH.card3.setVisibility(View.GONE);
+                        Picasso.get().load(result.getPhotos()[0].getUrls().getRegular()).into(movieVH.image11);
+                    } else if (result.getPhotos().length == 2) {
+                        movieVH.card1.setVisibility(View.GONE);
+                        movieVH.card2.setVisibility(View.VISIBLE);
+                        movieVH.card3.setVisibility(View.GONE);
+                        Picasso.get().load(result.getPhotos()[0].getUrls().getRegular()).into(movieVH.image21);
+                        Picasso.get().load(result.getPhotos()[1].getUrls().getRegular()).into(movieVH.image22);
+                    } else {
+                        movieVH.card1.setVisibility(View.GONE);
+                        movieVH.card2.setVisibility(View.GONE);
+                        movieVH.card3.setVisibility(View.VISIBLE);
+                        Picasso.get().load(result.getPhotos()[0].getUrls().getSmall()).into(movieVH.image31);
+                        Picasso.get().load(result.getPhotos()[1].getUrls().getSmall()).into(movieVH.image32);
+                        Picasso.get().load(result.getPhotos()[2].getUrls().getSmall()).into(movieVH.image33);
+                    }
+
+                    movieVH.name.setText(result.getName());
+                    movieVH.username.setText("@" + result.getUsername());
+                    Picasso.get().load(result.getProfile_image().getLarge()).into(movieVH.profile);
+
+                    movieVH.linearSearchUserLayout.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            AdHelper.ShowInter(context);
+                            context.startActivity(new Intent(context, UserActivity.class).putExtra("username", result.getUsername()).setFlags(FLAG_ACTIVITY_NEW_TASK));
+                        }
+                    });
+
+//                    if (position != 0)
+//                        if (position % Utils.adPos == 0) {
+////                            Log.e("POS", String.valueOf(position));
+//
+//                            AdHelper.AdLoadHelper(context, movieVH.adView, movieVH.layBanner);
+//
+//                        } else {
+//                            movieVH.adView.setVisibility(View.GONE);
+//                        }
+
+                    if (position != 0)
+                        if (position % Utils.adPos == 0) {
+                            ((FrameLayout)((SearchUsersAdapter.MovieVH) holder).ad_view_container).setVisibility(View.VISIBLE);
+                            AdView mAdView = new AdView(context);
+                            mAdView.setAdSize(AdSize.BANNER);
+                            mAdView.setAdUnitId(context.getString(R.string.banner_id));
+                            ((FrameLayout)((SearchUsersAdapter.MovieVH) holder).ad_view_container).addView(mAdView);
+                            AdRequest adRequest = new AdRequest.Builder().build();
+                            mAdView.loadAd(adRequest);
+                        } else {
+                            movieVH.ad_view_container.setVisibility(View.GONE);
+                        }
+
+
+                } catch (Exception e) {
+                }
+                break;
+
+            case LOADING:
+                break;
+        }
+
+    }
+
+    private AdSize getAdSize() {
+        WindowManager wm = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        display.getMetrics(outMetrics);
+        float widthPixels = outMetrics.widthPixels;
+        float density = outMetrics.density;
+        int adWidth = (int) (widthPixels / density);
+        return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(context, adWidth);
+    }
+
+    @Override
+    public int getItemCount() {
+        return movieResults == null ? 0 : movieResults.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return (position == movieResults.size() - 1 && isLoadingAdded) ? LOADING : ITEM;
+    }
+
+    public void add(SearchUserModel.Results r) {
+        movieResults.add(r);
+        notifyItemInserted(movieResults.size() - 1);
+    }
+
+    public void addAll(List<SearchUserModel.Results> moveResults) {
+        for (SearchUserModel.Results result : moveResults) {
+            add(result);
+//            Log.e("IDS", result.getId());
+        }
+    }
+
+    public void remove(SearchUserModel.Results r) {
+        int position = movieResults.indexOf(r);
+        if (position > -1) {
+            movieResults.remove(position);
+            notifyItemRemoved(position);
+        }
+    }
+
+    public void clear() {
+        isLoadingAdded = false;
+        while (getItemCount() > 0) {
+            remove(getItem(0));
+        }
+    }
+
+    public boolean isEmpty() {
+        return getItemCount() == 0;
+    }
+
+
+    public void addLoadingFooter() {
+        isLoadingAdded = true;
+        add(new SearchUserModel.Results());
+    }
+
+    public void removeLoadingFooter() {
+        isLoadingAdded = false;
+
+        int position = movieResults.size() - 1;
+        SearchUserModel.Results result = getItem(position);
+
+        if (result != null) {
+            movieResults.remove(position);
+            notifyItemRemoved(position);
+        }
+    }
+
+    public SearchUserModel.Results getItem(int position) {
+        return movieResults.get(position);
+    }
+
+    protected class MovieVH extends RecyclerView.ViewHolder {
+        private ImageView image31, image32, image33, image21, image22, image11, profile;
+        LinearLayout card1, card2, card3;
+        LinearLayout linearSearchUserLayout;
+        TextView name, username;
+        AdView adView;
+        LinearLayout layBanner;
+        FrameLayout ad_view_container;
+//        private CircleImageView profile;
+//        private TextView username;
+//        LinearLayout ll1;
+
+        public MovieVH(View itemView) {
+            super(itemView);
+            profile = itemView.findViewById(R.id.profile);
+            image31 = itemView.findViewById(R.id.image31);
+            image32 = itemView.findViewById(R.id.image32);
+            image33 = itemView.findViewById(R.id.image33);
+            image21 = itemView.findViewById(R.id.image21);
+            image22 = itemView.findViewById(R.id.image22);
+            image11 = itemView.findViewById(R.id.image11);
+            card1 = itemView.findViewById(R.id.card1);
+            card2 = itemView.findViewById(R.id.card2);
+            card3 = itemView.findViewById(R.id.card3);
+            linearSearchUserLayout = itemView.findViewById(R.id.linearSearchUserLayout);
+            name = itemView.findViewById(R.id.name);
+            username = itemView.findViewById(R.id.username);
+            adView = itemView.findViewById(R.id.adView);
+            layBanner = itemView.findViewById(R.id.banner_container);
+            ad_view_container = itemView.findViewById(R.id.ad_view_container);
+        }
+    }
+
+
+    protected class LoadingVH extends RecyclerView.ViewHolder {
+
+        public LoadingVH(View itemView) {
+            super(itemView);
+        }
+    }
+
+
+}

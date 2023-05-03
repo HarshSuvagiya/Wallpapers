@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.UserPhotosFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/main_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lav_actionBar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            app:lottie_autoPlay="true"
+            android:visibility="gone"
+            app:lottie_fileName="loading.json"
+            app:lottie_loop="true" />
+
+        <ProgressBar
+            android:id="@+id/main_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/noCollections"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="empty.json"
+        app:lottie_loop="true" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/filterSearchBtn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="#000"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="5dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#000"/>
+
+            <ImageView
+                android:id="@+id/filterSearch"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#000"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_filter_list_white_24dp" />
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+
+</FrameLayout>

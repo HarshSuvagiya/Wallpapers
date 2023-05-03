@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from H:\Projects\Android_Studio_Projects\Scorpion\FINAL PROJECTS\Wallpapers\Wallpapers\consent-library\src\main\AndroidManifest.xml:2:1-6:12
+INJECTED from H:\Projects\Android_Studio_Projects\Scorpion\FINAL PROJECTS\Wallpapers\Wallpapers\consent-library\src\main\AndroidManifest.xml:2:1-6:12
+INJECTED from H:\Projects\Android_Studio_Projects\Scorpion\FINAL PROJECTS\Wallpapers\Wallpapers\consent-library\src\main\AndroidManifest.xml:2:1-6:12
+	package
+		ADDED from H:\Projects\Android_Studio_Projects\Scorpion\FINAL PROJECTS\Wallpapers\Wallpapers\consent-library\src\main\AndroidManifest.xml:3:5-45
+		INJECTED from H:\Projects\Android_Studio_Projects\Scorpion\FINAL PROJECTS\Wallpapers\Wallpapers\consent-library\src\main\AndroidManifest.xml
+		INJECTED from H:\Projects\Android_Studio_Projects\Scorpion\FINAL PROJECTS\Wallpapers\Wallpapers\consent-library\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from H:\Projects\Android_Studio_Projects\Scorpion\FINAL PROJECTS\Wallpapers\Wallpapers\consent-library\src\main\AndroidManifest.xml:2:11-69
+uses-sdk
+INJECTED from H:\Projects\Android_Studio_Projects\Scorpion\FINAL PROJECTS\Wallpapers\Wallpapers\consent-library\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from H:\Projects\Android_Studio_Projects\Scorpion\FINAL PROJECTS\Wallpapers\Wallpapers\consent-library\src\main\AndroidManifest.xml
+INJECTED from H:\Projects\Android_Studio_Projects\Scorpion\FINAL PROJECTS\Wallpapers\Wallpapers\consent-library\src\main\AndroidManifest.xml
+INJECTED from H:\Projects\Android_Studio_Projects\Scorpion\FINAL PROJECTS\Wallpapers\Wallpapers\consent-library\src\main\AndroidManifest.xml
+INJECTED from H:\Projects\Android_Studio_Projects\Scorpion\FINAL PROJECTS\Wallpapers\Wallpapers\consent-library\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from H:\Projects\Android_Studio_Projects\Scorpion\FINAL PROJECTS\Wallpapers\Wallpapers\consent-library\src\main\AndroidManifest.xml
+		ADDED from H:\Projects\Android_Studio_Projects\Scorpion\FINAL PROJECTS\Wallpapers\Wallpapers\consent-library\src\main\AndroidManifest.xml
+		INJECTED from H:\Projects\Android_Studio_Projects\Scorpion\FINAL PROJECTS\Wallpapers\Wallpapers\consent-library\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from H:\Projects\Android_Studio_Projects\Scorpion\FINAL PROJECTS\Wallpapers\Wallpapers\consent-library\src\main\AndroidManifest.xml
+		ADDED from H:\Projects\Android_Studio_Projects\Scorpion\FINAL PROJECTS\Wallpapers\Wallpapers\consent-library\src\main\AndroidManifest.xml
+		INJECTED from H:\Projects\Android_Studio_Projects\Scorpion\FINAL PROJECTS\Wallpapers\Wallpapers\consent-library\src\main\AndroidManifest.xml

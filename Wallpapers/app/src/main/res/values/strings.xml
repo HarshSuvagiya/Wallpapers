@@ -1,0 +1,105 @@
+<resources>
+
+    <string name="msg_token_fmt">Token</string>
+
+    <string name="app_name">Splash Walls</string>
+    <string name="my_api_key">asdfghklqwertyuiopzxcvbnm</string>
+    <string name="log_in">Log in</string>
+    <string name="join">Join</string>
+    <string name="file_exists">This has already been downloaded</string>
+    <string name="download_started">Download started</string>
+    <string name="set_as_wallpaper">Set as wallpaper</string>
+    <string name="setting_wallpaper">Setting wallpaper&#8230;</string>
+    <string name="cancel">Cancel</string>
+    <string name="my_favourites">My Favorites</string>
+    <string name="made_with_in_india">Made with ❤ in india</string>
+    <string name="photos">Photos</string>
+    <string name="likes">Likes</string>
+    <string name="collections">Collections</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="auto_wallpaper_title">Auto Wallpaper</string>
+    <string name="auto_wallpaper_conditions">Conditions</string>
+    <string name="auto_wallpaper_on_wifi">On Wi-Fi</string>
+    <string name="auto_wallpaper_on_wifi_summary">Device must be connected to a Wi-Fi network</string>
+    <string name="auto_wallpaper_charging">Charging</string>
+    <string name="auto_wallpaper_charging_summary">Device must be connected to a power source</string>
+    <string name="auto_wallpaper_idle">Idle</string>
+    <string name="auto_wallpaper_idle_summary">Device must be inactive</string>
+    <string name="auto_wallpaper_interval">Interval</string>
+    <string name="auto_wallpaper_interval_summary">Select the auto wallpaper change interval</string>
+    <string-array name="auto_wallpaper_interval_options">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>12 hours</item>
+        <item>24 hours</item>
+        <item>48 hours</item>
+    </string-array>
+    <string-array name="auto_wallpaper_interval_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>2880</item>
+    </string-array>
+    <string name="auto_wallpaper_interval_default" translatable="false">1440</string>
+    <string name="auto_wallpaper_source">Source</string>
+    <string name="auto_wallpaper_category">Category</string>
+    <string name="auto_wallpaper_category_summary">Select the wallpaper category</string>
+    <string-array name="auto_wallpaper_category_options">
+        <item>All</item>
+        <item>Featured</item>
+        <item>Custom</item>
+    </string-array>
+    <string-array name="auto_wallpaper_category_values">
+        <item>All</item>
+        <item>Featured</item>
+        <item>Custom</item>
+    </string-array>
+    <string name="auto_wallpaper_category_default" translatable="false">All</string>
+    <string name="auto_wallpaper_custom_category">Custom Category</string>
+    <string name="auto_wallpaper_custom_category_summary">Get wallpapers matching a search term</string>
+    <string name="auto_wallpaper_custom_category_default" translatable="false">Wallpaper</string>
+    <string name="auto_wallpaper_options">Options</string>
+    <string name="auto_wallpaper_select_screen">Select Screen</string>
+    <string name="auto_wallpaper_select_screen_summary">Choose which screens to apply wallpaper to</string>
+    <string-array name="auto_wallpaper_select_screen_options">
+        <item>Home screen</item>
+        <item>Lock screen</item>
+        <item>Both</item>
+    </string-array>
+    <string-array name="auto_wallpaper_select_screen_values">
+        <item>Home screen</item>
+        <item>Lock screen</item>
+        <item>Both</item>
+    </string-array>
+    <string name="auto_wallpaper_select_screen_default" translatable="false">Both</string>
+    <string name="auto_wallpaper_history">Auto Wallpaper History</string>
+    <string name="auto_wallpaper_history_summary">View previously set wallpapers</string>
+    <string name="auto_wallpaper_info">Auto Wallpaper will refresh your home screen with a new random wallpaper based on the set conditions.</string>
+
+    <!-- Detail -->
+    <string name="stats">Stats</string>
+    <string name="photo_info">Info</string>
+    <string name="download">Download</string>
+    <string name="on">On</string>
+    <string name="off">Auto wallpaper service</string>
+    <string name="user">Users</string>
+    <string name="banner_id">ca-app-pub-4938515760572795/4013104613</string>
+    <string name="inter_id">ca-app-pub-4938515760572795/8057411938</string>
+<!---->
+<!--    <string name="banner_id">ca-app-pub-3940256099942544/6300978111</string>-->
+<!--     <string name="inter_id">ca-app-pub-3940256099942544/1033173712</string>-->
+
+    <string name="fb_banner_id">564185911200307_564189537866611</string>
+    <string name="fb_inter_id">564185911200307_567920244160207</string>
+    <!--    <string name="banner_id">ca-app-pub-4938515760572795/4013104613</string>-->
+</resources>

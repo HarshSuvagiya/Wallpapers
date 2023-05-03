@@ -1,0 +1,27 @@
+com/google/ads/consent/AdProvider.java
+ com.google.ads.consent.AdProvider
+com/google/ads/consent/ConsentFormListener.java
+ com.google.ads.consent.ConsentFormListener
+com/google/ads/consent/ConsentStatus.java
+ com.google.ads.consent.ConsentStatus
+com/google/android/ads/consent/BuildConfig.java
+ com.google.android.ads.consent.BuildConfig
+com/google/ads/consent/ConsentData.java
+ com.google.ads.consent.ConsentData
+com/google/ads/consent/DebugGeography.java
+ com.google.ads.consent.DebugGeography
+com/google/ads/consent/ConsentInfoUpdateListener.java
+ com.google.ads.consent.ConsentInfoUpdateListener
+com/google/ads/consent/ConsentInformation.java
+ com.google.ads.consent.ConsentInformation
+ com.google.ads.consent.ConsentInformation$AdNetworkLookupResponse
+ com.google.ads.consent.ConsentInformation$ConsentInfoUpdateResponse
+ com.google.ads.consent.ConsentInformation$ConsentInfoUpdateTask
+ com.google.ads.consent.ConsentInformation$ServerResponse
+com/google/ads/consent/ConsentForm.java
+ com.google.ads.consent.ConsentForm
+ com.google.ads.consent.ConsentForm$1
+ com.google.ads.consent.ConsentForm$2
+ com.google.ads.consent.ConsentForm$3
+ com.google.ads.consent.ConsentForm$Builder
+ com.google.ads.consent.ConsentForm$LoadState
