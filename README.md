@@ -10,8 +10,8 @@ An wallpaper application that uses unsplash API in backend.
 </ul>
 
 ## Screenshots
-<img src="sc1.png" width="250"><img src="sc2.png" width="250"><img src="sc3.png" width="250"><img src="sc4.png" width="250">
-<img src="sc5.png" width="250"><img src="sc6.png" width="250"><img src="sc7.png" width="250"><img src="sc8.png" width="250">
+<img src="sc1.png" width="250">&nbsp;<img src="sc2.png" width="250">&nbsp;<img src="sc3.png" width="250">&nbsp;<img src="sc4.png" width="250">
+<img src="sc5.png" width="250">&nbsp;<img src="sc6.png" width="250">&nbsp;<img src="sc7.png" width="250">&nbsp;<img src="sc8.png" width="250">
 
 ## Social Media
 
